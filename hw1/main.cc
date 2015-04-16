@@ -26,5 +26,11 @@ int main() {
     l.print();
     cout << l.find('v') << endl;
     s.print();
+    cout << s.find(s) << endl;
+    s = l;
+    s.print();
+    cout << s[0] << endl;
+    s = s + l;
+    s.print();
     return 0;
 }

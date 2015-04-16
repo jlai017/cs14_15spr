@@ -270,11 +270,14 @@ class MyList {
                 if(itemp == head)
                     break;
             }while(temp != head);
-            do
-            {
-                push_back(temp->data);
-                temp = temp->next;
-            }while(temp != head);
+            // if(temp->next != str.head)
+            // {
+            //     do
+            //     {
+            //         push_back(temp->data);
+            //         temp = temp->next;
+            //     }while(temp != head);
+            // }
             
             return *this;
         }
