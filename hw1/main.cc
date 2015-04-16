@@ -1,3 +1,8 @@
+//  =============== BEGIN ASSESSMENT HEADER ================
+/// Joshua Lai
+/// 861163421
+/// 13 April 2015
+//  ================== END ASSESSMENT HEADER ===============
 #include "MyList.H"
 #include <iostream>
 
