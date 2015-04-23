@@ -1,3 +1,8 @@
+//  =============== BEGIN ASSESSMENT HEADER ================
+/// Joshua Lai
+/// 861163421
+/// 22 April 2015
+//  ================== END ASSESSMENT HEADER ===============
 #ifndef WORDLADDER_H
 #define WORDLADDER_H
 #include <list>
@@ -30,7 +35,7 @@ class WordLadder {
 			fstream inF;
 			string word;
 			
-			inF.open(listFile);
+			inF.open(listFile.c_str());
 			if(!inF.is_open())
 				cout << "Error opening file." << endl;
 			
@@ -44,7 +49,7 @@ class WordLadder {
 		{
 			stack<string> first;
 			first.push(start);
-			queue<stack<string>> chain;
+			queue<stack<string> > chain;
 			chain.push(first);
 			
 			while(!chain.empty())
@@ -57,17 +62,18 @@ class WordLadder {
 						{
 							stack<string> print;
 							print.push(*it);
-							for(unsigned i = 0; i < chain.front().size(); i++)
+							while(!chain.front().empty())
 							{
 								print.push(chain.front().top());
 								chain.front().pop();
 							}
-							for(unsigned i = 0; i < print.size(); i++)
+							while(!print.empty())
 							{
 								cout << print.top() << ' ';
 								print.pop();
 							}
-							cout << endl;	
+							
+							return;
 						}
 						stack<string> copy(chain.front());
 						copy.push(*it);
@@ -76,6 +82,9 @@ class WordLadder {
 				}
 				chain.pop();
 			}
+			cout << "There is no word ladder from \"" << start 
+			<< "\" to \"" << end << "\".\n";
+
 		}
 };
 
